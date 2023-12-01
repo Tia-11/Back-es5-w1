@@ -16,5 +16,18 @@ public class Main {
         primaCanzone.play();
 
         primaImmagine.show();
+
+        primoVideo.aumentaLuminosita();
+        primoVideo.diminuisciVolume();
+
+        primoVideo.play();
+
+        primaCanzone.aumentaVolume();
+
+        primaCanzone.play();
+
+        primaImmagine.diminuisciLuminosita();
+
+        primaImmagine.show();
     }
 }

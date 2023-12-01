@@ -1,7 +1,8 @@
 package entities;
-import interfaces.reproducible;
+import interfaces.Reproducible;
+import interfaces.Volume;
 
-public class ElementoAudio extends ElementoMultimediale implements reproducible {
+public class ElementoAudio extends ElementoMultimediale implements Reproducible, Volume {
     private int volume;
 
     private int durata;
@@ -10,20 +11,6 @@ public class ElementoAudio extends ElementoMultimediale implements reproducible 
         super(titolo);
         this.durata = durata;
         this.volume = volume;
-    }
-
-    @Override
-    public void play() {
-        String titolo = getTitolo();
-        int durata = getDurata();
-
-        for (int i = 0; i < durata; i++) {
-            System.out.println(titolo);
-        }
-
-        for (int i = 0; i < volume; i++) {
-            System.out.println("!");
-        }
     }
 
     public int getVolume() {
@@ -40,5 +27,29 @@ public class ElementoAudio extends ElementoMultimediale implements reproducible 
 
     public void setDurata(int durata) {
         this.durata = durata;
+    }
+
+    @Override
+    public void play() {
+        String titolo = getTitolo();
+        int durata = getDurata();
+
+        for (int i = 0; i < durata; i++) {
+            System.out.println(titolo);
+        }
+
+        for (int i = 0; i < volume; i++) {
+            System.out.println("!");
+        }
+    }
+
+    @Override
+    public int aumentaVolume() {
+        return ++volume;
+    }
+
+    @Override
+    public int diminuisciVolume() {
+        return --volume;
     }
 }

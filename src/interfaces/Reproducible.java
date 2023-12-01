@@ -1,5 +1,5 @@
 package interfaces;
 
-public interface reproducible {
+public interface Reproducible {
     void play();
 }

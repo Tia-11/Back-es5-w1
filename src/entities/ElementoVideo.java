@@ -1,7 +1,10 @@
 package entities;
-import interfaces.reproducible;
+import interfaces.Brightness;
+import interfaces.Reproducible;
+import interfaces.Volume;
 
-public class ElementoVideo extends ElementoMultimediale implements reproducible {
+
+public class ElementoVideo extends ElementoMultimediale implements Reproducible, Volume, Brightness {
     private int luminosita;
     private int volume;
     private int durata;
@@ -12,25 +15,6 @@ public class ElementoVideo extends ElementoMultimediale implements reproducible 
         this.volume = volume;
         this.luminosita = luminosita;
     }
-
-    @Override
-    public void play() {
-        String titolo = getTitolo();
-        int durata = getDurata();
-
-        for (int i = 0; i < durata; i++) {
-            System.out.println(titolo);
-        }
-
-        for (int i = 0; i < volume; i++) {
-            System.out.println("!");
-        }
-
-        for (int i = 0; i < luminosita; i++) {
-            System.out.println("*");
-        }
-    }
-
     public int getLuminosita() {
         return luminosita;
     }
@@ -53,5 +37,43 @@ public class ElementoVideo extends ElementoMultimediale implements reproducible 
 
     public void setDurata(int durata) {
         this.durata = durata;
+    }
+
+    @Override
+    public void play() {
+        String titolo = getTitolo();
+        int durata = getDurata();
+
+        for (int i = 0; i < durata; i++) {
+            System.out.println(titolo);
+        }
+
+        for (int i = 0; i < volume; i++) {
+            System.out.println("!");
+        }
+
+        for (int i = 0; i < luminosita; i++) {
+            System.out.println("*");
+        }
+    }
+
+    @Override
+    public int aumentaVolume() {
+        return ++volume;
+    }
+
+    @Override
+    public int diminuisciVolume() {
+        return --volume;
+    }
+
+    @Override
+    public int aumentaLuminosita() {
+        return ++luminosita;
+    }
+
+    @Override
+    public int diminuisciLuminosita() {
+        return --luminosita;
     }
 }
