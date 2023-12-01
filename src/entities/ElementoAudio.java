@@ -17,16 +17,8 @@ public class ElementoAudio extends ElementoMultimediale implements Reproducible,
         return volume;
     }
 
-    public void setVolume(int volume) {
-        this.volume = volume;
-    }
-
     public int getDurata() {
         return durata;
-    }
-
-    public void setDurata(int durata) {
-        this.durata = durata;
     }
 
     @Override
@@ -35,11 +27,13 @@ public class ElementoAudio extends ElementoMultimediale implements Reproducible,
         int durata = getDurata();
 
         for (int i = 0; i < durata; i++) {
-            System.out.println(titolo);
-        }
+            System.out.print(titolo);
 
-        for (int i = 0; i < volume; i++) {
-            System.out.println("!");
+            for (int j = 0; j < getVolume(); j++) {
+                System.out.print(" ! ");
+            }
+
+            System.out.println();
         }
     }
 

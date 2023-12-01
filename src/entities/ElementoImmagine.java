@@ -9,13 +9,8 @@ public class ElementoImmagine extends ElementoMultimediale implements Brightness
         this.luminosita = luminosita;
     }
 
-
     public int getLuminosita() {
         return luminosita;
-    }
-
-    public void setLuminosita(int luminosita) {
-        this.luminosita = luminosita;
     }
 
     @Override
@@ -30,10 +25,12 @@ public class ElementoImmagine extends ElementoMultimediale implements Brightness
 
     public void show() {
         String titolo = getTitolo();
-        System.out.println(titolo);
+        System.out.print(titolo);
 
-        for (int i = 0; i < luminosita; i++) {
-            System.out.println("*");
+        for (int i = 0; i < getLuminosita(); i++) {
+            System.out.print(" * ");
         }
+
+        System.out.println();
     }
 }
