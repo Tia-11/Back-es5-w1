@@ -12,8 +12,25 @@ public class Main {
 
         ElementoImmagine primaImmagine = new ElementoImmagine("Poster",3);
 
-        LettoreMultimediale rap00 = new LettoreMultimediale();
+        ElementoVideo[] rap00 = {
+                new ElementoVideo("Whitout Me", 4, 3, 5),
+                new ElementoVideo("Mockingbird", 6, 6, 5),
+                new ElementoVideo("Lose Yourself", 4, 7, 3),
+                new ElementoVideo("21 Questions", 3, 4, 2),
+                new ElementoVideo("Get Rich or Die Tryin", 10, 9, 1)
+        };
 
+        ElementoVideo[] italiana = {
+                new ElementoVideo("La cura",3,4,5),
+                new ElementoVideo("Emozioni",7,2,10),
+                new ElementoVideo("Senza Fine",7,2,2),
+                new ElementoVideo("Abbronzatissima",4,4,4),
+                new ElementoVideo("Vagabondo",7,9,1),
+        };
+
+        LettoreMultimediale rap = new LettoreMultimediale(rap00);
+
+        LettoreMultimediale musicaItaliana = new LettoreMultimediale(italiana);
 
         primoVideo.play();
 
@@ -22,6 +39,7 @@ public class Main {
         primaImmagine.show();
 
         primoVideo.aumentaLuminosita();
+
         primoVideo.diminuisciVolume();
 
         primoVideo.play();
@@ -34,7 +52,8 @@ public class Main {
 
         primaImmagine.show();
 
-        rap00.esegui();
+        musicaItaliana.esegui();
     }
 
 }
+
