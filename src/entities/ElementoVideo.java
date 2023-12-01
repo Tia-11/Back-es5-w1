@@ -4,9 +4,11 @@ import interfaces.reproducible;
 public class ElementoVideo extends ElementoMultimediale implements reproducible {
     private int luminosita;
     private int volume;
+    private int durata;
 
-    public ElementoVideo(int titolo, int luminosita, int volume) {
+    public ElementoVideo(int titolo, int durata, int luminosita, int volume) {
         super(titolo);
+        this.durata = durata;
         this.luminosita = luminosita;
         this.volume = volume;
     }
@@ -29,5 +31,13 @@ public class ElementoVideo extends ElementoMultimediale implements reproducible 
 
     public void setVolume(int volume) {
         this.volume = volume;
+    }
+
+    public int getDurata() {
+        return durata;
+    }
+
+    public void setDurata(int durata) {
+        this.durata = durata;
     }
 }
