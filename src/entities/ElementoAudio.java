@@ -6,7 +6,7 @@ public class ElementoAudio extends ElementoMultimediale implements reproducible 
 
     private int durata;
 
-    public ElementoAudio(int titolo, int durata, int volume) {
+    public ElementoAudio(String titolo, int durata, int volume) {
         super(titolo);
         this.durata = durata;
         this.volume = volume;
@@ -14,6 +14,16 @@ public class ElementoAudio extends ElementoMultimediale implements reproducible 
 
     @Override
     public void play() {
+        String titolo = getTitolo();
+        int durata = getDurata();
+
+        for (int i = 0; i < durata; i++) {
+            System.out.println(titolo);
+        }
+
+        for (int i = 0; i < volume; i++) {
+            System.out.println("!");
+        }
     }
 
     public int getVolume() {

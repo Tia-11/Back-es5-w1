@@ -3,7 +3,7 @@ package entities;
 public class ElementoImmagine extends ElementoMultimediale {
     private int luminosita;
 
-    public ElementoImmagine(int titolo, int luminosita) {
+    public ElementoImmagine(String titolo, int luminosita) {
         super(titolo);
         this.luminosita = luminosita;
     }
@@ -17,6 +17,11 @@ public class ElementoImmagine extends ElementoMultimediale {
     }
 
     public void show() {
-        // Logica per mostrare l'immagine
+        String titolo = getTitolo();
+        System.out.println(titolo);
+
+        for (int i = 0; i < luminosita; i++) {
+            System.out.println("*");
+        }
     }
 }

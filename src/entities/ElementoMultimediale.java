@@ -4,7 +4,7 @@ package entities;
 public abstract class ElementoMultimediale  {
     private String titolo;
 
-    public ElementoMultimediale(int titolo) {
+    public ElementoMultimediale(String titolo) {
         this.titolo = String.valueOf(titolo);
     }
 
